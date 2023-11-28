@@ -9,7 +9,7 @@ ENV container=docker
 RUN zypper install -y dbus-1 \
   systemd-sysvinit \
   openssh-server \
-  python39 && \
+  python312 && \
   zypper clean --all
 
 WORKDIR "/usr/lib/systemd/system/sysinit.target.wants"
