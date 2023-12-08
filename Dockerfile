@@ -8,9 +8,10 @@ ENV container=docker
 
 # Install dependencies
 RUN zypper install -y dbus-1 \
-  systemd-sysvinit \
   openssh-server \
-  python312 && \
+  python312 \
+  systemd-sysvinit \
+  update-alternatives && \
   zypper clean --all
 
 # Update alternative
