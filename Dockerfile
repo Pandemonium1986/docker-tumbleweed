@@ -9,13 +9,13 @@ ENV container=docker
 # Install dependencies
 RUN zypper install -y dbus-1 \
   openssh-server \
-  python312 \
+  python3 \
   systemd-sysvinit \
   update-alternatives && \
   zypper clean --all
 
 # Update alternative
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 0
+# RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 0
 
 # Remove systemd target
 WORKDIR /usr/lib/systemd/system/sysinit.target.wants
